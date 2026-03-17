@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -10,23 +11,27 @@
     <body>
         <nav>
             <div class="navTitle"> 
-            <img src="Assets/Logo.png" alt="CheckMate Logo" class="logo">
-            <h2>CheckMate</h2>
+                <img src="Assets/Logo.png" alt="CheckMate Logo" class="logo">
+                <h2>CheckMate</h2>
             </div>
             <ul>
-                <li><a href="login.html">Login</a></li>
-                <li><a href="signUp.html">Sign Up </a></li>
-                <li><a href="settings.html">settings</a></li>
+                <li><a href="login.html">Log In</a></li>
+                <li><a href="signUp.html">Sign Up</a></li>
+                <li><a href="settings.html">Settings</a></li>
             </ul>
         </nav>
+
         <div class="signUp-container">
             <h2 class="username-button">Username</h2>
-            <input type="text" id="usernam" name="username" placeholder="Enter Username">
+            <input type="text" id="username" name="username" placeholder="Enter Username (6 Characters Long)">
+
             <h2 class="email-button">Email</h2>
-            <input type="email" id="email" name="email" placeholder="Enter Email">
+            <input type="email" id="email" name="email" placeholder="Enter Email (must have @)">
+
             <h2 class="password-button">Password</h2>
-            <input type="password" id="password" name="password" placeholder="Enter Password">
-            <h4 class="Account">Already Have An Account<a href="login.html"> Log In</a></h4>
+            <input type="password" id="password" name="password" placeholder="Enter Password (8 Characters Long)">
+
+            <h4>Already Have An Account? <a href="login.html">Log In</a></h4>
 
             <button>Sign Up</button>
             <script type="module" src="signup.js"></script>

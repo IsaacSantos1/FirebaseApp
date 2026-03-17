@@ -46,8 +46,8 @@ a:link {
     gap: 20px;
     margin-top: 20px;
     padding: 20px;
-    background-color: rgba(97,136,112, 0.5);
-    width: 75%;
+    background-color: rgba(97,136,112, 0.3);
+    border-radius: 20px;
     }
 
     body{
@@ -57,46 +57,57 @@ a:link {
         background-color: #D5DDCD;
     }
 
-    .login-container{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 20px;
-        margin-top: 20px;
-        padding: 20px;
-        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-        background-color: #D5DDCD;
-        width: 75%;
-        border-radius: 15px;
-        }
 
-        .signUp-container{
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 20px;
-            margin-top: 20px;
-            padding: 20px;
-            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-            background-color: #D5DDCD;
-            width: 75%;
-            border-radius: 15px;
-            }
-    
-    
-            button{
-                background-color: #415B41;
-                color: white;
-                border: none;
-                border-radius: 30px;
-                padding-left: 50px;
-                padding-right: 50px;
-                padding-top: 15px;
-                padding-bottom: 15px;
-                cursor: pointer;
-            }
-        input{
-            border-radius:10px;
-            padding:10px;
-        }
 
+.login-container{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    margin-top: 60px;
+    padding: 60px 50px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    background-color: #D5DDCD;
+    width: 45%;
+    border-radius: 15px;
+}
+
+.login-container h4, .signUp-container h4{
+    margin: 0;
+}
+
+.login-container input, .signUp-container input{
+    border-radius: 10px;
+    padding: 10px;
+    width: 80%;
+    border: 1px solid #999;
+}
+input::-webkit-input-placeholder { 
+    text-align: center; 
+    }
+
+.signUp-container{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    margin-top: 60px;
+    padding: 60px 50px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    background-color: #D5DDCD;
+    width:45%;
+    border-radius: 15px;
+}
+
+button{
+    background-color: #415B41;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    padding-left: 60px;
+    padding-right: 60px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    cursor: pointer;
+    align-self:center;
+}

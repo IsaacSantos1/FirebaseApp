@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", () => {
       });
 
       alert("User signed up successfully!");
-      window.location.href = "login.html";
+      window.location.href = "main.html";
     } catch (error) {
       alert("Error signing up: " + error.message);
       console.error("Signup error:", error);

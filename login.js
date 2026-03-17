@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
     try {
       const userCredential = await signInWithEmailAndPassword(auth, email, password);
       alert("Logged in successfully!");
-      window.location.href = "order.html";
+      window.location.href = "main.html";
     } catch (error) {
       alert("Error logging in: " + error.message);
       console.error("Login error:", error);
