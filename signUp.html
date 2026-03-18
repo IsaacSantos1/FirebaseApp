@@ -6,7 +6,8 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="Login page for the website">
-        <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="loginSignUp.css">
+        <link rel="stylesheet" href="main.css">
     </head>
     <body>
         <nav>
@@ -22,18 +23,26 @@
         </nav>
 
         <div class="signUp-container">
-            <h2 class="username-button">Username</h2>
+            <form id="signupForm">
+            <h4><label for="username" className="username-button">Username</label> </h4>
             <input type="text" id="username" name="username" placeholder="Enter Username (6 Characters Long)">
-
-            <h2 class="email-button">Email</h2>
+            
+            <h4> <label for="email" class="email-button">Email</label></h4>
             <input type="email" id="email" name="email" placeholder="Enter Email (must have @)">
 
-            <h2 class="password-button">Password</h2>
+            <h4> <label for="password" class="password-button">Password</label></h4>
             <input type="password" id="password" name="password" placeholder="Enter Password (8 Characters Long)">
-
+                
+            <br>
+            <br>
             <h4>Already Have An Account? <a href="login.html">Log In</a></h4>
+            <br>
+            <br>
+            <button type="submit" id="signup">Sign Up</button>
+        </form>
+    
 
-            <button>Sign Up</button>
+           
             <script type="module" src="signup.js"></script>
         </div>
     </body>
