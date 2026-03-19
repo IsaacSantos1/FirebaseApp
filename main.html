@@ -23,9 +23,16 @@
             <form>
                 <input type="text" id="taskName" class="standardInpt" placeholder="Enter Task Name">
                 <input type="date" id="ETC" class="standardInpt" placeholder="Enter Expected Due Date">
-                <input type="text" id="status" class="standardInpt" placeholder="Enter Current Status (If Not Complete)">
+                
+                <!-- Dropdown for status -->
+                <select id="status" class="standardInpt">
+                    <option value="not-started">Not Started</option>
+                    <option value="in-progress">In Progress</option>
+                    <option value="near-completion">Near Completion</option>
+                </select>
+                
                 <input type="text" id="priority" class="standardInpt" placeholder="Enter Priority Filling">
-                <button  type="submit" id="submit" >Submit New Task</button>
+                <button type="submit" id="submit">Submit New Task</button>
             </form>
         </div>
         <div class="taskDisplay">

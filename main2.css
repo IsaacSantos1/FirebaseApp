@@ -13,6 +13,19 @@ nav{
     align-items:center;
     color:white;
 }
+
+li.complete {
+    color: green;
+    text-decoration: line-through;
+}
+
+li.in-progress {
+    color: orange;
+}
+
+li.incomplete {
+    color: red;
+}
 #logo{
     display:flex;
     flex-direction:row;
