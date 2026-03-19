@@ -1,0 +1,72 @@
+body{
+    background-color:#D5DDCD;
+}
+a{
+    color:white;
+    text-decoration:none;
+}
+nav{
+    background-color:#9AAB89;
+    border-radius:5px;
+    display:flex;
+    flex-direction:row;
+    align-items:center;
+    color:white;
+}
+#logo{
+    display:flex;
+    flex-direction:row;
+    align-items:center;
+    justify-content:start;
+    margin-right:auto;
+}
+#navigation ul{
+    display:flex;
+    flex-direction:row;
+    justify-content:end;
+    list-style:none;
+    gap:20px;
+    margin-right:40px;
+}
+#ETC{
+    display:flex;
+    gap:10px;
+    justify-content: center;
+    color:grey;
+}
+form{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:5px;
+}
+input::-webkit-input-placeholder { 
+    text-align: center; 
+    }
+.standardInpt{
+    width:90%;
+    border-radius:10px;
+    padding:10px;
+}
+.taskCreate{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    border-radius:15px;
+}
+.taskDisplay{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    border-radius:15px;
+}
+.standardBtn{
+    margin-top:20px;
+    width:fit-content;
+    font-family:"Andada Pro";
+    background-color:#415B41;
+    padding:15px;
+    border-radius:30px;
+    color:white;
+    cursor:pointer;
+}
+.taskManager{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    border-radius:15px;
+}
