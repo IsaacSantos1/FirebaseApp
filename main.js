@@ -1,9 +1,23 @@
 import { db } from "./firebase-config.js"
 import { doc, collection, deleteDoc, updateDoc, getDocs, addDoc } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-firestore.js"
+import { auth } from "./firebase-config.js";
+import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-auth.js";
+import { query, where } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-firestore.js";
+import { signOut } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-auth.js";
 
 async function displayAllTasks() {
     try {
-        const querySnapshot = await getDocs(collection(db, "tasks"));
+        const user = auth.currentUser;
+
+if (!user) return;
+
+const q = query(
+    collection(db, "tasks"),
+    where("userId", "==", user.uid)
+);
+
+const querySnapshot = await getDocs(q);
+
         const list = document.getElementById("list");
         if (list) {
             list.innerHTML = ""; 
@@ -41,12 +55,20 @@ const taskForm = document.querySelector(".taskCreate form");
 taskForm.addEventListener("submit", async (e) => {
     e.preventDefault(); 
 
-    const newTask = {
-        name: document.getElementById("taskName").value,
-        date: document.getElementById("ETC").value,
-        status: document.getElementById("status").value,
-        priority: document.getElementById("priority").value
-    };
+   const user = auth.currentUser;
+
+if (!user) {
+    alert("User not logged in");
+    return;
+}
+
+const newTask = {
+    name: document.getElementById("taskName").value,
+    date: document.getElementById("ETC").value,
+    status: document.getElementById("status").value,
+    priority: document.getElementById("priority").value,
+    userId: user.uid
+};
 
     try {
         await addDoc(collection(db, "tasks"), newTask); 
@@ -59,7 +81,13 @@ taskForm.addEventListener("submit", async (e) => {
 });
 
 
-displayAllTasks();
+onAuthStateChanged(auth, (user) => {
+    if (user) {
+        displayAllTasks();
+    } else {
+        window.location.href = "login.html";
+    }
+});
 
 const taskList = document.getElementById('list');
 const taskIDInput = document.getElementById('taskID');
@@ -177,3 +205,16 @@ function addTask(taskName, status = 'incomplete') {
 addTask('Task 1', 'incomplete');
 addTask('Task 2', 'in-progress');
 addTask('Task 3', 'complete');
+
+const signOutBtn = document.getElementById("signOutBtn");
+
+if (signOutBtn) {
+    signOutBtn.addEventListener("click", async () => {
+        try {
+            await signOut(auth);
+            window.location.href = "login.html";
+        } catch (error) {
+            console.error("Sign out error:", error);
+        }
+    });
+}
